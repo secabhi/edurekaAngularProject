@@ -1,0 +1,74 @@
+<div class="col-md-12">
+    <div class="container col-md-4">
+        <form (ngSubmit)="addrecord()" name="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" [(ngModel)]="age" name="age">
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="designation" [(ngModel)]="designation" name="designation">
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" id="salary" [(ngModel)]="salary" name="salary">
+            </div>
+            <button type="button" (click)="addrecord()" class="btn btn-default" >Submit</button>
+        </form>
+    </div>
+
+    <div class="container col-md-4">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Designation</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of model">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.designation}}</td>
+                    <td>{{item.salary}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h3>
+            To Assign value to Form
+        </h3>
+
+        <button class="btn btn-default" id="assign" (click)="assign_value()">Assign</button>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="ass_name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" [(ngModel)]="ass_age" name="age">
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="designation" [(ngModel)]="ass_designation" name="designation">
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" id="salary" [(ngModel)]="ass_salary" name="salary">
+            </div>
+        </form>
+    </div>
+</div>
